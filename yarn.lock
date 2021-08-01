@@ -12105,6 +12105,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"prettier@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "prettier@npm:2.3.2"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 17ce5784ac67621c292df58e2da60b2ee150c2d6aebea22a6ad9e52fcd6a5e66c349d0a8436ea3bd8ff9d778920a5f68000d7625b74f43558718a49755aa5259
+  languageName: node
+  linkType: hard
+
 "pretty-bytes@npm:^5.3.0":
   version: 5.6.0
   resolution: "pretty-bytes@npm:5.6.0"
@@ -14680,6 +14689,7 @@ resolve@^2.0.0-next.3:
     autoprefixer: ^9
     graphql: ^15.5.1
     postcss: ^7
+    prettier: ^2.3.2
     react: ^17.0.2
     react-dom: ^17.0.2
     react-router-dom: ^5.2.0
