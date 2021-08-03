@@ -5,17 +5,10 @@
   "dependencies": {
     "@apollo/client": "^3.4.1",
     "@craco/craco": "^6.2.0",
+    "@heroicons/react": "^1.0.3",
     "@tailwindcss/forms": "^0.3.3",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-router-dom": "^5.1.8",
     "autoprefixer": "^9",
-    "eslint-config-react-app": "^6.0.0",
+    "classnames": "^2.3.1",
     "graphql": "^15.5.1",
     "postcss": "^7",
     "react": "^17.0.2",
@@ -27,14 +20,38 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "prettier": "^2.3.2"
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.8",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-formatter-summary": "^1.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "import-sort-style-javascript": "github:mention-me/import-sort-style-javascript#1.0.0",
+    "prettier": "^2.3.0"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
+  },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "style": "import-sort-style-javascript",
+      "parser": "babylon"
+    }
   },
   "eslintConfig": {
     "extends": [
