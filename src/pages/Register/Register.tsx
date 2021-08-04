@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { gql, useMutation } from "@apollo/client";
-import { ExclamationCircleIcon, XCircleIcon } from "@heroicons/react/solid";
+import { ExclamationCircleIcon } from "@heroicons/react/solid";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
