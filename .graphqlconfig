@@ -1,0 +1,12 @@
+{
+  "name": "Tourneyz GraphQL Schema",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Remote GraphQL Endpoint": {
+        "url": "http://127.0.0.1:8000",
+        "introspect": true
+      }
+    }
+  }
+}
