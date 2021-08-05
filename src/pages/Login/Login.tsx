@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import posthog from "posthog-js";
 import { NavLink, useHistory } from "react-router-dom";
 
 import { useLoginMutation } from "../../hooks/useLoginMutation";
@@ -16,6 +17,7 @@ const Login: React.VoidFunctionComponent<Props> = () => {
     const handleLogin = async () => {
         try {
             const response = await loginMutation(email, password);
+            posthog.identify(email, { email });
             history.push("/");
         } catch (error) {}
     };

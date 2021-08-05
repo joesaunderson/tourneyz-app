@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { ApolloProvider } from "@apollo/client";
+import posthog from "posthog-js";
 import { Route, Switch } from "react-router-dom";
 
 import useApolloClient from "./hooks/useApolloClient";
@@ -13,6 +14,17 @@ import "./App.css";
 
 function App() {
     const client = useApolloClient();
+    posthog.init("phc_OD5Vz1d70QW9H6bHuznkSj7lncKBB2JiuUy3wS4ZjoE", { api_host: "https://app.posthog.com" });
+
+    const isFirstRun = useRef(true);
+    useEffect(() => {
+        if (isFirstRun.current) {
+            isFirstRun.current = false;
+            return;
+        }
+
+        posthog.capture("$pageview");
+    }, [location]);
 
     return (
         <ApolloProvider client={client}>
