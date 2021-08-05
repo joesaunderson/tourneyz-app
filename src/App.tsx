@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import { ApolloProvider } from "@apollo/client";
 import posthog from "posthog-js";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 
 import useApolloClient from "./hooks/useApolloClient";
 import Error404 from "./pages/Error404/Error404";
@@ -17,6 +17,7 @@ function App() {
     posthog.init("phc_OD5Vz1d70QW9H6bHuznkSj7lncKBB2JiuUy3wS4ZjoE", { api_host: "https://app.posthog.com" });
 
     const isFirstRun = useRef(true);
+    const location = useLocation();
     useEffect(() => {
         if (isFirstRun.current) {
             isFirstRun.current = false;
