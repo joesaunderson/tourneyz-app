@@ -6,9 +6,9 @@ import { Route, Switch, useLocation } from "react-router-dom";
 
 import useApolloClient from "./hooks/useApolloClient";
 import Error404 from "./pages/Error404/Error404";
-import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import TournamentFeed from "./pages/TournamentFeed/TournamentFeed";
 
 import "./App.css";
 
@@ -30,8 +30,8 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <Switch>
-                <Route path="/" exact>
-                    <Home />
+                <Route path={["/", "/tournaments/:feedFilter"]} exact>
+                    <TournamentFeed />
                 </Route>
                 <Route path="/login">
                     <Login />

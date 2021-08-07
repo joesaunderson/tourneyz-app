@@ -1793,6 +1793,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@headlessui/react@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@headlessui/react@npm:1.4.0"
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
+  checksum: 773f56f30cd4c614b05f479a395d733789ab55fb701d703b85f57795e3a2ca7994172bc982c57aca1911961ef77c18005c0118f5e29d3e9d626cf292076ea4a1
+  languageName: node
+  linkType: hard
+
 "@heroicons/react@npm:^1.0.3":
   version: 1.0.3
   resolution: "@heroicons/react@npm:1.0.3"
@@ -2693,7 +2703,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router@npm:*":
+"@types/react-router@npm:*, @types/react-router@npm:^5.1.16":
   version: 5.1.16
   resolution: "@types/react-router@npm:5.1.16"
   dependencies:
@@ -14106,7 +14116,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-router@npm:5.2.0":
+"react-router@npm:5.2.0, react-router@npm:^5.2.0":
   version: 5.2.0
   resolution: "react-router@npm:5.2.0"
   dependencies:
@@ -16418,6 +16428,7 @@ resolve@^2.0.0-next.3:
   dependencies:
     "@apollo/client": ^3.4.1
     "@craco/craco": ^6.2.0
+    "@headlessui/react": ^1.4.0
     "@heroicons/react": ^1.0.3
     "@tailwindcss/forms": ^0.3.3
     "@testing-library/jest-dom": ^5.11.4
@@ -16427,6 +16438,7 @@ resolve@^2.0.0-next.3:
     "@types/node": ^12.0.0
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
+    "@types/react-router": ^5.1.16
     "@types/react-router-dom": ^5.1.8
     autoprefixer: ^9
     classnames: ^2.3.1
@@ -16447,6 +16459,7 @@ resolve@^2.0.0-next.3:
     prettier: ^2.3.0
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-router: ^5.2.0
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
     tailwindcss: "npm:@tailwindcss/postcss7-compat@^2.2.0"

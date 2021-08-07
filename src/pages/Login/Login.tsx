@@ -25,11 +25,14 @@ const Login: React.VoidFunctionComponent<Props> = () => {
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                <img
-                    className="mx-auto h-12 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                    alt="Workflow"
-                />
+                <NavLink to="/">
+                    <img
+                        className="mx-auto h-12 w-auto"
+                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                        alt="Workflow"
+                    />
+                </NavLink>
+
                 <h2 className="mt-6 mb-3 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
                 <p className="text-sm text-center">
                     Not got an account?{" "}
