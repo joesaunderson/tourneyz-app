@@ -1,28 +1,22 @@
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
 
+import useGames from "../../hooks/useGames";
 import useNavigationItems from "../../hooks/useNavigationItems";
-
-const sidebarGames = [
-    { name: "Warzone", href: "#" },
-    { name: "MW", href: "#" },
-    { name: "Black Ops", href: "#" },
-    { name: "Battlefield", href: "#" },
-    { name: "Splitgate", href: "#" },
-    { name: "Fallguys", href: "#" },
-];
 
 interface Props {}
 
 const Sidebar: React.VoidFunctionComponent<Props> = () => {
     const navItems = useNavigationItems();
+    const games = useGames();
 
     return (
         <nav aria-label="Sidebar" className="sticky top-4 divide-y divide-gray-300">
             <div className="pb-8 space-y-1">
                 {navItems.map((item) => (
-                    <a
+                    <NavLink
                         key={item.name}
-                        href={item.href}
+                        to={item.to}
                         className={classNames(
                             item.current ? "bg-gray-200 text-gray-900" : "text-gray-600 hover:bg-gray-50",
                             "group flex items-center px-3 py-2 text-sm font-medium rounded-md"
@@ -37,7 +31,7 @@ const Sidebar: React.VoidFunctionComponent<Props> = () => {
                             aria-hidden="true"
                         />
                         <span className="truncate">{item.name}</span>
-                    </a>
+                    </NavLink>
                 ))}
             </div>
             <div className="pt-10">
@@ -48,14 +42,17 @@ const Sidebar: React.VoidFunctionComponent<Props> = () => {
                     All games
                 </p>
                 <div className="mt-3 space-y-2" aria-labelledby="communities-headline">
-                    {sidebarGames.map((community) => (
-                        <a
-                            key={community.name}
-                            href={community.href}
-                            className="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50"
+                    {games.map((game) => (
+                        <NavLink
+                            key={game.name}
+                            to={`/tournaments?game=${game.id}`}
+                            className={classNames(
+                                game.current ? "bg-gray-200 text-gray-900" : "text-gray-600 hover:bg-gray-50 ",
+                                "group flex items-center px-3 py-2 text-sm font-medium rounded-md"
+                            )}
                         >
-                            <span className="truncate">{community.name}</span>
-                        </a>
+                            <span className="truncate">{game.name}</span>
+                        </NavLink>
                     ))}
                 </div>
             </div>

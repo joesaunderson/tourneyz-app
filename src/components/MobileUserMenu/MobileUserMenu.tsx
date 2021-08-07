@@ -1,4 +1,5 @@
 import { BellIcon } from "@heroicons/react/outline";
+import { NavLink } from "react-router-dom";
 
 import useUserNavigationItems from "../../hooks/useUserNavigationItems";
 
@@ -29,13 +30,13 @@ const MobileUserMenu: React.VoidFunctionComponent<Props> = ({ user }) => {
             </div>
             <div className="mt-3 max-w-3xl mx-auto px-2 space-y-1 sm:px-4">
                 {navItems.map((item) => (
-                    <a
+                    <NavLink
                         key={item.name}
-                        href={item.href}
+                        to={item.to}
                         className="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900"
                     >
                         {item.name}
-                    </a>
+                    </NavLink>
                 ))}
             </div>
         </div>

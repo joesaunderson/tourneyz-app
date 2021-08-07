@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import useTopPlayers from "../../hooks/useTopPlayers";
 import useTrendingPlayers from "../../hooks/useTrendingPlayers";
 
@@ -24,31 +26,31 @@ const Aside: React.VoidFunctionComponent<Props> = () => {
                                         </div>
                                         <div className="min-w-0 flex-1">
                                             <p className="text-sm font-medium text-gray-900">
-                                                <a href={user.href}>{user.name}</a>
+                                                <NavLink to={`/player/${user.id}`}>{user.name}</NavLink>
                                             </p>
                                             <p className="text-sm text-gray-500">
-                                                <a href={user.href}>{"@" + user.handle}</a>
+                                                <NavLink to={`/player/${user.id}`}>{"@" + user.handle}</NavLink>
                                             </p>
                                         </div>
                                         <div className="flex-shrink-0">
-                                            <button
-                                                type="button"
+                                            <NavLink
+                                                to={`/player/${user.id}`}
                                                 className="inline-flex items-center px-3 py-0.5 rounded-full bg-rose-50 text-sm font-medium text-rose-700 hover:bg-rose-100"
                                             >
                                                 <span>View</span>
-                                            </button>
+                                            </NavLink>
                                         </div>
                                     </li>
                                 ))}
                             </ul>
                         </div>
                         <div className="mt-6">
-                            <a
-                                href="#"
+                            <NavLink
+                                to="/players/top"
                                 className="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
                             >
                                 View all
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
@@ -68,31 +70,31 @@ const Aside: React.VoidFunctionComponent<Props> = () => {
                                         </div>
                                         <div className="min-w-0 flex-1">
                                             <p className="text-sm font-medium text-gray-900">
-                                                <a href={user.href}>{user.name}</a>
+                                                <NavLink to={`/player/${user.id}`}>{user.name}</NavLink>
                                             </p>
                                             <p className="text-sm text-gray-500">
-                                                <a href={user.href}>{"@" + user.handle}</a>
+                                                <NavLink to={`/player/${user.id}`}>{"@" + user.handle}</NavLink>
                                             </p>
                                         </div>
                                         <div className="flex-shrink-0">
-                                            <button
-                                                type="button"
+                                            <NavLink
+                                                to={`/player/${user.id}`}
                                                 className="inline-flex items-center px-3 py-0.5 rounded-full bg-rose-50 text-sm font-medium text-rose-700 hover:bg-rose-100"
                                             >
                                                 <span>View</span>
-                                            </button>
+                                            </NavLink>
                                         </div>
                                     </li>
                                 ))}
                             </ul>
                         </div>
                         <div className="mt-6">
-                            <a
-                                href="#"
+                            <NavLink
+                                to="/players/trending"
                                 className="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
                             >
                                 View all
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                 </div>

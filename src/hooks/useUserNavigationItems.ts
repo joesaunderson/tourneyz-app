@@ -1,8 +1,7 @@
 const useUserNavigationItems = () => {
     return [
-        { name: "Your Profile", href: "#" },
-        { name: "Settings", href: "#" },
-        { name: "Sign out", href: "#" },
+        { name: "Your Profile", to: "/user/profile" },
+        { name: "Settings", to: "/settings" },
     ];
 };
 

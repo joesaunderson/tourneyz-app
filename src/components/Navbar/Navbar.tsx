@@ -31,13 +31,13 @@ const Navbar: React.VoidFunctionComponent<Props> = () => {
                         <div className="relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8">
                             <div className="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
                                 <div className="flex-shrink-0 flex items-center">
-                                    <a href="#">
+                                    <NavLink to="/">
                                         <img
                                             className="block h-8 w-auto"
                                             src="https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500"
                                             alt="Workflow"
                                         />
-                                    </a>
+                                    </NavLink>
                                 </div>
                             </div>
                             <div className="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
@@ -62,23 +62,20 @@ const Navbar: React.VoidFunctionComponent<Props> = () => {
 
                                 {!loading && data?.activeUser && (
                                     <>
-                                        <a
-                                            href="#"
-                                            className="ml-5 flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500"
-                                        >
+                                        <button className="ml-5 flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500">
                                             <span className="sr-only">View notifications</span>
                                             <BellIcon className="h-6 w-6" aria-hidden="true" />
-                                        </a>
+                                        </button>
                                         <DesktopUserMenu user={data.activeUser} />
                                     </>
                                 )}
 
-                                <a
-                                    href="#"
+                                <NavLink
+                                    to="/tournament/host"
                                     className="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500"
                                 >
                                     Host a tourney
-                                </a>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
@@ -86,9 +83,9 @@ const Navbar: React.VoidFunctionComponent<Props> = () => {
                     <Popover.Panel as="nav" className="lg:hidden" aria-label="Global">
                         <div className="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
                             {navItems.map((item) => (
-                                <a
+                                <NavLink
                                     key={item.name}
-                                    href={item.href}
+                                    to={item.to}
                                     aria-current={item.current ? "page" : undefined}
                                     className={classNames(
                                         item.current ? "bg-gray-100 text-gray-900" : "hover:bg-gray-50",
@@ -96,7 +93,7 @@ const Navbar: React.VoidFunctionComponent<Props> = () => {
                                     )}
                                 >
                                     {item.name}
-                                </a>
+                                </NavLink>
                             ))}
                         </div>
                         {!loading && data?.activeUser && <MobileUserMenu user={data.activeUser} />}

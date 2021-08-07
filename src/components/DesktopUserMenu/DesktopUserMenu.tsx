@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 import { Menu, Transition } from "@headlessui/react";
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
 
 import useUserNavigationItems from "../../hooks/useUserNavigationItems";
 
@@ -39,18 +40,31 @@ const DesktopUserMenu: React.VoidFunctionComponent<Props> = ({ user }) => {
                             {navItems.map((item) => (
                                 <Menu.Item key={item.name}>
                                     {({ active }) => (
-                                        <a
-                                            href={item.href}
+                                        <NavLink
+                                            to={item.to}
                                             className={classNames(
                                                 active ? "bg-gray-100" : "",
                                                 "block py-2 px-4 text-sm text-gray-700"
                                             )}
                                         >
                                             {item.name}
-                                        </a>
+                                        </NavLink>
                                     )}
                                 </Menu.Item>
                             ))}
+
+                            <Menu.Item key="logout">
+                                {({ active }) => (
+                                    <button
+                                        className={classNames(
+                                            active ? "bg-gray-100" : "",
+                                            "block py-2 px-4 text-sm text-gray-700"
+                                        )}
+                                    >
+                                        Logout
+                                    </button>
+                                )}
+                            </Menu.Item>
                         </Menu.Items>
                     </Transition>
                 </>

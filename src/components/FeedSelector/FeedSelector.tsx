@@ -11,7 +11,7 @@ interface Props {}
 
 const FeedSelector: React.VoidFunctionComponent<Props> = () => {
     const history = useHistory();
-    const { feedFilter = "latest" } = useParams<{ feedFilter?: string }>();
+    const { tournamentFilter = "latest" } = useParams<{ tournamentFilter?: string }>();
 
     const handleActiveFilterChange = (activeFilter: string) => {
         history.push(`/tournaments/${activeFilter}`);
@@ -26,7 +26,7 @@ const FeedSelector: React.VoidFunctionComponent<Props> = () => {
                 <select
                     id="question-tabs"
                     className="block w-full rounded-md border-gray-300 text-base font-medium text-gray-900 shadow-sm focus:border-rose-500 focus:ring-rose-500"
-                    defaultValue={tabs.find((tab) => tab.id === feedFilter)?.name}
+                    defaultValue={tabs.find((tab) => tab.id === tournamentFilter)?.name}
                     onChange={(event) => handleActiveFilterChange(event.target.value)}
                 >
                     {tabs.map((tab) => (
@@ -41,9 +41,9 @@ const FeedSelector: React.VoidFunctionComponent<Props> = () => {
                     {tabs.map((tab, tabIdx) => (
                         <button
                             key={tab.name}
-                            aria-current={tab.id === feedFilter ? "page" : undefined}
+                            aria-current={tab.id === tournamentFilter ? "page" : undefined}
                             className={classNames(
-                                tab.id === feedFilter ? "text-gray-900" : "text-gray-500 hover:text-gray-700",
+                                tab.id === tournamentFilter ? "text-gray-900" : "text-gray-500 hover:text-gray-700",
                                 tabIdx === 0 ? "rounded-l-lg" : "",
                                 tabIdx === tabs.length - 1 ? "rounded-r-lg" : "",
                                 "group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-sm font-medium text-center hover:bg-gray-50 focus:z-10"
@@ -54,7 +54,7 @@ const FeedSelector: React.VoidFunctionComponent<Props> = () => {
                             <span
                                 aria-hidden="true"
                                 className={classNames(
-                                    tab.id === feedFilter ? "bg-rose-500" : "bg-transparent",
+                                    tab.id === tournamentFilter ? "bg-rose-500" : "bg-transparent",
                                     "absolute inset-x-0 bottom-0 h-0.5"
                                 )}
                             />

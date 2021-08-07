@@ -30,7 +30,34 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <Switch>
-                <Route path={["/", "/tournaments/:feedFilter"]} exact>
+                <Route path={["/", "/tournaments/:tournamentFilter?"]} exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path="/tournament/host" exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path="/tournament/:tournamentId" exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path={["/players", "/players/:playerFilter"]} exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path="/player/:playerId" exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path={["/teams", "/teams/:teamFilter"]} exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path="/team/:teamId" exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path="/games" exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path="/leaderboards" exact>
+                    <TournamentFeed />
+                </Route>
+                <Route path="/trending" exact>
                     <TournamentFeed />
                 </Route>
                 <Route path="/login">
